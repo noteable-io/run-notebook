@@ -22,14 +22,14 @@ jobs:
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v3
-    - uses: mseal/run-noteable-notebook@v1
+    - uses: noteable-io/run-noteable-notebook@v1
       env:
         RUNNER: ${{ toJson(runner) }}
         SECRETS: ${{ toJson(secrets) }}
         GITHUB: ${{ toJson(github) }}
       with:
         notebook: "https://app.noteable.io/f/9b92ef52-29af-498a-bbd1-d14c18b27e5d/What-can-you-do-in-a-Noteable-notebook.ipynb"
-        # Alternatively ==> notebook: "9b92ef52-29af-498a-bbd1-d14c18b27e5d"
+        # Alternatively ==> notebook: "noteable://9b92ef52-29af-498a-bbd1-d14c18b27e5d"
         params: "PATHTOPARAMS.json"
         isReport: False
         poll: True
@@ -58,23 +58,23 @@ jobs:
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v3
-    - uses: mseal/run-noteable-notebook@v1
+    - uses: noteable-io/run-noteable-notebook@v1
       env:
         RUNNER: ${{ toJson(runner) }}
         SECRETS: ${{ toJson(secrets) }}
         GITHUB: ${{ toJson(github) }}
       with:
-        notebook: "9b92ef52-29af-498a-bbd1-d14c18b27e5d"
+        notebook: "noteable://9b92ef52-29af-498a-bbd1-d14c18b27e5d"
         params: "PATHTOPARAMS.json"
         isReport: False
         poll: True
-    - uses: mseal/run-noteable-notebook@v1
+    - uses: noteable-io/run-noteable-notebook@v1
       env:
         RUNNER: ${{ toJson(runner) }}
         SECRETS: ${{ toJson(secrets) }}
         GITHUB: ${{ toJson(github) }}
       with:
-        notebook: "a292ef52-29af-498a-bbd1-d14c18b27eed"
+        notebook: "noteable://a292ef52-29af-498a-bbd1-d14c18b27eed"
     - uses: actions/upload-artifact@v3
       if: always()
       with:
