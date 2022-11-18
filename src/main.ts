@@ -57,7 +57,7 @@ async function run() {
       papermillEnvs['NOTEABLE_TOKEN'] = token;
       // TODO Fail here if undefined as the papermill command will fail later
     }
-    const githubString = JSON.stringify(JSON.parse(process.env.GITHUB || ""));
+    const githubString = JSON.stringify(JSON.parse(process.env.GITHUB || "")).replace(/'/g, "\\'");
 
     parsedNotebookFile = path.join(outputDir, path.basename(notebookFile));
     // Install dependencies
