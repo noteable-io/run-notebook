@@ -37,6 +37,7 @@ async function run() {
     const notebookFile = core.getInput('notebook');
     const paramsFile = core.getInput('params');
     const isReport = core.getInput('isReport');
+    const loggingLevel = core.getInput('loggingLevel');
     const poll = core.getInput('poll');
     if (!fs.existsSync(outputDir)) {
       fs.mkdirSync(outputDir);
@@ -76,7 +77,7 @@ import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from time import sleep
 
-logging.basicConfig(level=logging.DEBUG, format="%(message)s")
+logging.basicConfig(level=logging.${loggingLevel}, format="%(message)s")
 # TODO: Figure out why the basic config isn't setting the defaults for structlog
 import structlog
 structlog.configure(
