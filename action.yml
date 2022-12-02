@@ -14,6 +14,9 @@ inputs:
   poll:
     description: 'If True, this will pool output every 15 seconds and displays, this is useful in cases where there is long running cells and user wants to see output after going to the page, since github actions does not show streaming from the beginning, this is a hack to get around it'
     default: False
+  loggingLeveL:
+    description: 'Used to set the logging level for the papermill process.'
+    default: 'INFO'
 branding:
   icon: 'book'
   color: 'orange'
