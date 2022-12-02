@@ -76,7 +76,7 @@ import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from time import sleep
 
-logging.basicConfig(level=logging.INFO, format="%(message)s")
+logging.basicConfig(level=logging.DEBUG, format="%(message)s")
 # TODO: Figure out why the basic config isn't setting the defaults for structlog
 import structlog
 structlog.configure(
